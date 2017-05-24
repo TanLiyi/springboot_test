@@ -15,6 +15,7 @@ public class PaySureDto implements Serializable {
 	private double total;
 	private String favourable; //优惠描述
 	private double realPrice;
+	private String message;
 	
 	public Integer getOrderId() {
 		return orderId;
@@ -46,5 +47,12 @@ public class PaySureDto implements Serializable {
 	public void setRealPrice(double realPrice) {
 		this.realPrice = realPrice;
 	}
-	
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 }

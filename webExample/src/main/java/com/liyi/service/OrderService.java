@@ -1,5 +1,6 @@
 package com.liyi.service;
 
+import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +12,8 @@ import javax.transaction.Transactional;
 
 import com.liyi.dto.*;
 import com.liyi.entity.*;
+import com.liyi.exception.CommonCode;
+import com.liyi.exception.ServiceException;
 import com.liyi.repository.*;
 import com.liyi.utils.BeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,12 +47,19 @@ public class OrderService {
 	private OrderSubRespostory orderSubRespostory;
 	
 	public List<OrderDto> getOrderList(){
-		List<OrderDto> list=new ArrayList<>();
 		List<Order> orders=orderRespostory.findAllOrder();
-		for(Order order:orders){
-			OrderDto dto=this.getDetail(order.getId());
-			list.add(dto);
-		}
+		List<OrderDto> list=orders.stream().map(e->{
+			OrderDto orderDto=BeanMapper.map(e,OrderDto.class);
+			List<OrderGoodsDto> goods=e.getOrderSub().stream().map(o->{
+				OrderGoodsDto goodsDto=new OrderGoodsDto();
+				goodsDto.setGoods(o.getGood());
+				goodsDto.setBuyCount(o.getBuyCount());
+				return goodsDto;
+			}).collect(Collectors.toList());
+			orderDto.setGoods(goods);
+			orderDto.setAddress(e.getAddress());
+			return  orderDto;
+		}).collect(Collectors.toList());
 		return list;
 		
 	}
@@ -64,6 +74,7 @@ public class OrderService {
 				goodsDto.setBuyCount(o.getBuyCount());
 				return goodsDto;
 			}).collect(Collectors.toList());
+			orderDto.setGoods(goods);
 			orderDto.setAddress(e.getAddress());
 			return  orderDto;
 		}).collect(Collectors.toList());
@@ -72,14 +83,15 @@ public class OrderService {
 	}
 	
 	public OrderDto getDetail(Integer orderId){
-		OrderDto orderDto=new OrderDto();
 		Order order=orderRespostory.findById(orderId);
+		OrderDto orderDto=BeanMapper.map(order,OrderDto.class);
 		List<OrderGoodsDto> goods=order.getOrderSub().stream().map(o->{
 			OrderGoodsDto goodsDto=new OrderGoodsDto();
 			goodsDto.setGoods(o.getGood());
 			goodsDto.setBuyCount(o.getBuyCount());
 			return goodsDto;
 		}).collect(Collectors.toList());
+		orderDto.setGoods(goods);
 		orderDto.setAddress(order.getAddress());
 		return orderDto;
 	}
@@ -117,7 +129,7 @@ public class OrderService {
 			response.setTotal(total);
 			response.setRealPrice(realPay);
 			double cut=total-realPay;
-			response.setFavourable(config.getLeaveName()+"会员共优惠"+cut+"元");
+			response.setFavourable(config.getLeaveName()+"会员共优惠"+new DecimalFormat("0.00").format(cut) +"元");
 			
 			Order order=new Order();
 			order.setCreateTime(new Date());
@@ -127,7 +139,7 @@ public class OrderService {
 			order.setOrderCode(LocalTime.now().toString());
 			order.setRealPrice(realPay);
 			order.setTotalPrice(total);
-			order.setFavourable(config.getLeaveName()+"会员，共优惠"+cut+"元");
+			order.setFavourable(config.getLeaveName()+"会员，共优惠"+new DecimalFormat("0.00").format(cut)+"元");
 			orderRespostory.save(order);
 			List<OrderInputDto> goods=new ArrayList<>();
 			for(CartSub sub : subs){
@@ -159,6 +171,9 @@ public class OrderService {
 					g.setTotalSaleQty(g.getTotalSaleQty()+sub.getQty());
 					g.setTotalStockQty(g.getTotalStockQty()-sub.getQty());
 					g.setUpdateTime(new Date());
+					if(g.getTotalStockQty()<0){
+						throw new ServiceException(CommonCode.BAD_REQUEST,"库存不足");
+					}
 				}
 				goodReprositry.save(g);
 			}
@@ -179,7 +194,7 @@ public class OrderService {
 		double realpri=((i-config.getBaifen())/100)*total;
 		response.setRealPrice(realpri);
 		double cut=total-realpri;
-		response.setFavourable(config.getLeaveName()+"会员，共优惠"+cut+"元");
+		response.setFavourable(config.getLeaveName()+"会员，共优惠"+new DecimalFormat("0.00").format(cut)+"元");
 		
 		Order order=new Order();
 		order.setCreateTime(new Date());
@@ -189,7 +204,7 @@ public class OrderService {
 		order.setOrderCode(LocalTime.now().toString());
 		order.setRealPrice(realpri);
 		order.setTotalPrice(total);
-		order.setFavourable(config.getLeaveName()+"会员，共优惠"+cut+"元");
+		order.setFavourable(config.getLeaveName()+"会员，共优惠"+new DecimalFormat("0.00").format(cut)+"元");
 		orderRespostory.save(order);
 		
 		List<OrderInputDto> goods=new ArrayList<>();
@@ -221,6 +236,9 @@ public class OrderService {
 			g.setTotalSaleQty(g.getTotalSaleQty()+request.getBuyCount());
 			g.setTotalStockQty(g.getTotalStockQty()-request.getBuyCount());
 			g.setUpdateTime(new Date());
+			if(g.getTotalStockQty()<0){
+				throw new ServiceException(CommonCode.BAD_REQUEST,"库存不足");
+			}
 		}
 		goodReprositry.save(g);
 		return response;

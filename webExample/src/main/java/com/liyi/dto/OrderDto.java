@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.liyi.entity.Address;
+import com.liyi.entity.OrderAddress;
 import com.liyi.entity.User;
 
 public class OrderDto implements Serializable {
@@ -24,7 +25,7 @@ public class OrderDto implements Serializable {
 	private Integer count;
 	private Integer status;
 	private String desc;
-	private Address address;
+	private OrderAddress address;
 	
 	public Date getCreateTime() {
 		return createTime;
@@ -86,10 +87,10 @@ public class OrderDto implements Serializable {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public Address getAddress() {
+	public OrderAddress getAddress() {
 		return address;
 	}
-	public void setAddress(Address address) {
+	public void setAddress(OrderAddress address) {
 		this.address = address;
 	}
 }

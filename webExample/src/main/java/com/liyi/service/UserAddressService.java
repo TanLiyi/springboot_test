@@ -44,7 +44,7 @@ public class UserAddressService {
 		return addressDtos;
 	}
 	
-	public AddressDto getDefaule(Integer userId){
+/*	public AddressDto getDefaule(Integer userId){
 		AddressDto dto=new AddressDto();
 		Address address=addressReprositry.findDefault(userId);
 		dto.setCiyt(address.getCiyt());
@@ -56,7 +56,7 @@ public class UserAddressService {
 		dto.setTown(address.getTown());
 		return dto;
 		
-	}
+	}*/
 	
 	public AddressDto getDetail(Integer id){
 		AddressDto dto=new AddressDto();

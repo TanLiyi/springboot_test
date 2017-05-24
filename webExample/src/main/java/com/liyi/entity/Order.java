@@ -72,7 +72,7 @@ public class Order implements Serializable {
     
     @OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="address_id", insertable = false, updatable = false,referencedColumnName="id")
-    private Address address;
+    private OrderAddress address;
     
 	public Integer getAddressId() {
 		return addressId;
@@ -82,11 +82,11 @@ public class Order implements Serializable {
 		this.addressId = addressId;
 	}
 
-	public Address getAddress() {
+	public OrderAddress getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(OrderAddress address) {
 		this.address = address;
 	}
 

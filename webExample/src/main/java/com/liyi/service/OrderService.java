@@ -9,26 +9,12 @@ import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
+import com.liyi.dto.*;
+import com.liyi.entity.*;
+import com.liyi.repository.*;
+import com.liyi.utils.BeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.liyi.dto.OrderDto;
-import com.liyi.dto.OrderGoodsDto;
-import com.liyi.dto.OrderInputDto;
-import com.liyi.dto.PayDto;
-import com.liyi.dto.PaySureDto;
-import com.liyi.entity.CartSub;
-import com.liyi.entity.Goods;
-import com.liyi.entity.LeaveConfig;
-import com.liyi.entity.Order;
-import com.liyi.entity.OrderSub;
-import com.liyi.entity.User;
-import com.liyi.repository.CartSubRespostory;
-import com.liyi.repository.GoodRepository;
-import com.liyi.repository.LeaveConfigRespostory;
-import com.liyi.repository.OrderRespostory;
-import com.liyi.repository.OrderSubRespostory;
-import com.liyi.repository.UserReprositry;
 
 @Service
 public class OrderService {
@@ -47,6 +33,12 @@ public class OrderService {
 	
 	@Autowired
 	private GoodRepository goodReprositry;
+
+	@Autowired
+	private UserAddressService addressService;
+
+	@Autowired
+	private OrderAddressReprositry orderAddressReprositry;
 	
 	@Autowired
 	private OrderSubRespostory orderSubRespostory;
@@ -62,39 +54,33 @@ public class OrderService {
 		
 	}
 	
-	public List<OrderDto> getUserList(Integer Id){
-		List<OrderDto> list=new ArrayList<>();
-		List<Order> orders=orderRespostory.findUserOrder(Id);
-		for(Order order:orders){
-			OrderDto dto=this.getDetail(order.getId());
-			list.add(dto);
-		}
+	public List<OrderDto> getUserList(Integer userId){
+		List<Order> orders=orderRespostory.findUserOrder(userId);
+		List<OrderDto> list=orders.stream().map(e->{
+			OrderDto orderDto=BeanMapper.map(e,OrderDto.class);
+			List<OrderGoodsDto> goods=e.getOrderSub().stream().map(o->{
+				OrderGoodsDto goodsDto=new OrderGoodsDto();
+				goodsDto.setGoods(o.getGood());
+				goodsDto.setBuyCount(o.getBuyCount());
+				return goodsDto;
+			}).collect(Collectors.toList());
+			orderDto.setAddress(e.getAddress());
+			return  orderDto;
+		}).collect(Collectors.toList());
 		return list;
 		
 	}
 	
-	public OrderDto getDetail(Integer id){
+	public OrderDto getDetail(Integer orderId){
 		OrderDto orderDto=new OrderDto();
-		Order order=orderRespostory.findById(id);
-		if(order==null){
-			return orderDto;
-		}
-		orderDto.setId(order.getId());
-		orderDto.setCreateTime(order.getCreateTime());
-		orderDto.setOrderCode(order.getOrderCode());
-		orderDto.setStatus(order.getOrderStatus());
-		orderDto.setUser(order.getUser());
-		orderDto.setRealPice(order.getRealPrice());
-		orderDto.setDesc(order.getFavourable());
-		orderDto.setAddress(order.getAddress());
-		orderDto.setTotal(order.getTotalPrice());
-		List<OrderGoodsDto> goods=order.getOrderSub().stream().map(e->{
-			OrderGoodsDto good=new OrderGoodsDto();
-			good.setGoods(e.getGood());
-			good.setBuyCount(e.getBuyCount());
-			return good;
+		Order order=orderRespostory.findById(orderId);
+		List<OrderGoodsDto> goods=order.getOrderSub().stream().map(o->{
+			OrderGoodsDto goodsDto=new OrderGoodsDto();
+			goodsDto.setGoods(o.getGood());
+			goodsDto.setBuyCount(o.getBuyCount());
+			return goodsDto;
 		}).collect(Collectors.toList());
-		orderDto.setGoods(goods);
+		orderDto.setAddress(order.getAddress());
 		return orderDto;
 	}
 	@Transactional
@@ -242,11 +228,11 @@ public class OrderService {
 	@Transactional
 	public void pay(PayDto request){
 		Order order=orderRespostory.findById(request.getOrderId());
-		if(order==null){
-			
-		}
 		order.setOrderStatus(1); //0-未 1-支付 2-待收 3-完成
-		order.setAddressId(request.getAddressId());
+		AddressDto addressDto=addressService.getDetail(request.getAddressId());
+		OrderAddress orderAddress= BeanMapper.map(addressDto,OrderAddress.class);
+		orderAddressReprositry.save(orderAddress);
+		order.setAddressId(orderAddress.getId());
 		orderRespostory.save(order);
 	}
 	@Transactional

@@ -15,7 +15,7 @@ public class BeanMapper {
 		return dozer.map(source,destinationClass);
 	}
 
-	public <T> List<T> mapList(Iterable<?> sourceList, Class<T> destinationClass){
+	public static <T> List<T> mapList(Iterable<?> sourceList, Class<T> destinationClass){
 		List<T> list= Lists.newArrayList();
 		for (Object source : sourceList) {
 			T object=dozer.map(source,destinationClass);

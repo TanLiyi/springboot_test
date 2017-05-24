@@ -28,35 +28,26 @@ public class OrderAddress implements Serializable {
 	
     @Column(name = "order_id")
     private Integer orderId;
-    
-    @Column(name = "province")
-    private String province;
-    
-    @Column(name = "city")
-    private String city;
 
-    @Column(name = "district")
-    private String district;
-    
-    @Column(name = "address")
-    private String address;
-    
-    @Column(name = "post_code")
-    private String postCode;
-    
-    @Column(name = "tele_phone")
-    private String telePhone;
-    
-    private String consignor;
-    
-    @Column(name = "deleted")
-    private Byte deleted;
-    
-    @Column(name = "create_time")
-    private Date createTime;
-    
-    @Column(name = "update_time")
-    private Date updateTime;
+	private String consignor;   //收货人姓名
+
+	@Column(name="tel")
+	private String tel;
+
+	@Column(name="pri")
+	private String pri;//省
+
+	@Column(name="city")
+	private String ciyt;//市
+
+	@Column(name="town")
+	private String town;//区
+
+	@Column(name="street")
+	private String street;//街道
+
+	@Column(name="create_time")
+	private Date createTime;
 
 	public Integer getId() {
 		return id;
@@ -74,55 +65,6 @@ public class OrderAddress implements Serializable {
 		this.orderId = orderId;
 	}
 
-	public String getProvince() {
-		return province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getPostCode() {
-		return postCode;
-	}
-
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
-	}
-
-
-	public String getTelePhone() {
-		return telePhone;
-	}
-
-	public void setTelePhone(String telePhone) {
-		this.telePhone = telePhone;
-	}
-
 	public String getConsignor() {
 		return consignor;
 	}
@@ -131,12 +73,44 @@ public class OrderAddress implements Serializable {
 		this.consignor = consignor;
 	}
 
-	public Byte getDeleted() {
-		return deleted;
+	public String getTel() {
+		return tel;
 	}
 
-	public void setDeleted(Byte deleted) {
-		this.deleted = deleted;
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getPri() {
+		return pri;
+	}
+
+	public void setPri(String pri) {
+		this.pri = pri;
+	}
+
+	public String getCiyt() {
+		return ciyt;
+	}
+
+	public void setCiyt(String ciyt) {
+		this.ciyt = ciyt;
+	}
+
+	public String getTown() {
+		return town;
+	}
+
+	public void setTown(String town) {
+		this.town = town;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
 	public Date getCreateTime() {
@@ -146,13 +120,4 @@ public class OrderAddress implements Serializable {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
 }

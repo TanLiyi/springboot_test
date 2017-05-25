@@ -42,7 +42,6 @@ public class OrderController {
 		}catch(RuntimeException e){
 			model.put("message", "商品库存不足");
 		}
-//		PaySureDto paySure=orderService.byCart(ids.split(","),user.getId());
 		
 		session.setAttribute("list", list);
 		return "/pay";

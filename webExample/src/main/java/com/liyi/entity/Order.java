@@ -41,7 +41,7 @@ public class Order implements Serializable {
 	private String orderCode;
 
 	@Column(name = "order_status")
-	private Integer orderStatus; // 1.未付款 2.已付款 3.待收货 5 已收货-已完成
+	private Integer orderStatus; //0-未 1-支付 2-待收 3-完成
 
 	@Column(name = "real_price")
 	private double realPrice;
@@ -52,7 +52,7 @@ public class Order implements Serializable {
 	private String favourable;  //优惠
 	
 	@Column(name = "deleted")
-	private Integer deleted;
+	private Integer deleted=0;
 	
 	@Column(name = "create_time")
     private Date createTime;

@@ -46,21 +46,6 @@ public class OrderService {
 	@Autowired
 	private OrderSubRespostory orderSubRespostory;
 	
-	//dashboard
-	public DashBoardGetCountDto getCount(){
-		Integer deliveryingCount= orderRespostory.deliveryingCount();
-		Integer notPaidCount=orderRespostory.notPaidCount();
-		Integer undeliveredCount=orderRespostory.undeliveredCount();
-		Integer successCount=orderRespostory.successCount();
-		
-		DashBoardGetCountDto response=new DashBoardGetCountDto();
-		response.setDeliveryingCount(deliveryingCount);
-		response.setNotPaidCount(notPaidCount);
-		response.setUndeliveredCount(undeliveredCount);
-		response.setSuccessCount(successCount);
-		return response;
-		
-	}
 	
 	public List<OrderDto> getOrderList(){
 		List<Order> orders=orderRespostory.findAllOrder();

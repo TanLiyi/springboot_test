@@ -34,10 +34,16 @@ public class OrderController {
 		List<AddressDto> list=addressService.getAddressList(user.getId());
 //		AddressDto de=addressService.getDefaule(user.getId());
 		model.put("list", list);
-		PaySureDto paySure=orderService.byCart(ids.split(","),user.getId());
-		model.put("pay", paySure);
-		model.put("sureId", null);
-		session.setAttribute("pay", paySure);
+		try{
+			PaySureDto paySure=orderService.byCart(ids.split(","),user.getId());
+			model.put("pay", paySure);
+			model.put("sureId", null);
+			session.setAttribute("pay", paySure);
+		}catch(RuntimeException e){
+			model.put("message", "商品库存不足");
+		}
+//		PaySureDto paySure=orderService.byCart(ids.split(","),user.getId());
+		
 		session.setAttribute("list", list);
 		return "/pay";
 	}

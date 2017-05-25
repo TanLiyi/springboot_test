@@ -71,7 +71,7 @@ public class Order implements Serializable {
     private User user;
     
     @OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="address_id", insertable = false, updatable = false,referencedColumnName="id")
+    @JoinColumn(name="id", insertable = false, updatable = false,referencedColumnName="order_id")
     private OrderAddress address;
     
 	public Integer getAddressId() {

@@ -28,6 +28,7 @@ import com.liyi.repository.CartReprositry;
 import com.liyi.repository.LeaveConfigRespostory;
 import com.liyi.repository.PointsReprositry;
 import com.liyi.repository.UserReprositry;
+import com.liyi.utils.BeanMapper;
 import com.liyi.utils.CustomSpecications;
 import com.liyi.utils.DateUtils;
 import com.liyi.utils.OffsetRequest;
@@ -156,8 +157,6 @@ public class UserService {
 	}
 
 	public UserInfoDto getUserInfo(Integer id) {
-		UserInfoDto info = new UserInfoDto();
-
 		User user = userReprositry.findById(id);
 		List<LeaveConfig> leaveConfigs=leaveConfigRespostory.findAllLeaveConfig(); 
 		//因为等级积分可以改动，并不能单靠id去匹配，因此采用积分去匹配才保险
@@ -169,14 +168,9 @@ public class UserService {
 		}
 		User user1 = userReprositry.findById(id);
 		Points point = pointsReprositry.findByUserId(user.getId()).get(0);  //获取签到状态
-		info.setId(user1.getId());
-		info.setPoint(user1.getPoint());
-		info.setTel(user1.getTel());
-		info.setUsername(user1.getUsername());
-		info.setSex(user1.getSex());
-		info.setLeaveName(user1.getLeaveName());
-		info.setStatus(point.getStatus());
 		
+		UserInfoDto info = BeanMapper.map(user1, UserInfoDto.class);
+		info.setStatus(point.getStatus());
 		return info;
 	}
 

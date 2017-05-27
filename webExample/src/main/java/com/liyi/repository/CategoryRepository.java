@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.liyi.entity.Category;
 
-public interface CategoryReprositry extends CrudRepository<Category, Integer>,JpaSpecificationExecutor<Category>{
+public interface CategoryRepository extends CrudRepository<Category, Integer>,JpaSpecificationExecutor<Category>{
 	
 	List<Category> findByDeleted(Integer deleted);
 	

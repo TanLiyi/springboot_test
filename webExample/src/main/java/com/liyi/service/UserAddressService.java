@@ -15,13 +15,13 @@ import com.liyi.dto.AddressEditDto;
 import com.liyi.dto.CommonCreateResponseDto;
 import com.liyi.dto.CommonResponseDto;
 import com.liyi.entity.Address;
-import com.liyi.repository.AddressReprositry;
+import com.liyi.repository.AddressRepository;
 
 @Service
 public class UserAddressService {
 
 	@Autowired
-	private AddressReprositry addressReprositry;
+	private AddressRepository addressReprositry;
 	
 	public List<AddressDto> getAddressList(Integer uid){
 		 List<Address> address = addressReprositry.findByUserId(uid);

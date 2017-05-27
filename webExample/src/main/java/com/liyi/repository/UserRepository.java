@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.liyi.entity.User;
 
-public interface UserReprositry extends CrudRepository<User, Integer>,JpaSpecificationExecutor<User>{
+public interface UserRepository extends CrudRepository<User, Integer>,JpaSpecificationExecutor<User>{
 	
 	@Query("select u from User u where username=?1  and deleted=0")
 	User findByName(String username);
@@ -33,4 +33,7 @@ public interface UserReprositry extends CrudRepository<User, Integer>,JpaSpecifi
 	@Modifying
 	@Query("update User set deleted=1 where id in?1")
 	void deleteIdIn(List<Integer> collect);
+	
+	@Query("select count(1) from User where deleted=0")
+	Integer countByDeleted();
 }

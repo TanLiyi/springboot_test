@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 
-public interface OrderAddressReprositry extends CrudRepository<OrderAddress, Integer>{
+public interface OrderAddressRepository extends CrudRepository<OrderAddress, Integer>{
 	
 }

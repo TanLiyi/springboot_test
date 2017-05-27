@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.liyi.entity.OrderSub;
 
-public interface OrderSubRespostory extends CrudRepository<OrderSub, Integer>{
+public interface OrderSubRepository extends CrudRepository<OrderSub, Integer>{
 
 }

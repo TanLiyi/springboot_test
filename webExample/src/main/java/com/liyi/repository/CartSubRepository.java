@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.liyi.entity.CartSub;
 
-public interface CartSubRespostory extends CrudRepository<CartSub, Integer> {
+public interface CartSubRepository extends CrudRepository<CartSub, Integer> {
 	
 	@Query("select s from CartSub s where  id=?1 and deleted=0")
 	CartSub findById( Integer id);

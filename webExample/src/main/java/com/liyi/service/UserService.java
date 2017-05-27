@@ -24,10 +24,10 @@ import com.liyi.entity.Cart;
 import com.liyi.entity.LeaveConfig;
 import com.liyi.entity.Points;
 import com.liyi.entity.User;
-import com.liyi.repository.CartReprositry;
+import com.liyi.repository.CartRepository;
 import com.liyi.repository.LeaveConfigRespostory;
-import com.liyi.repository.PointsReprositry;
-import com.liyi.repository.UserReprositry;
+import com.liyi.repository.PointsRepository;
+import com.liyi.repository.UserRepository;
 import com.liyi.utils.BeanMapper;
 import com.liyi.utils.CustomSpecications;
 import com.liyi.utils.DateUtils;
@@ -40,13 +40,13 @@ import com.liyi.utils.SearchFilter.Operator;
 public class UserService {
 
 	@Autowired
-	private UserReprositry userReprositry;
+	private UserRepository userReprositry;
 
 	@Autowired
-	private PointsReprositry pointsReprositry;
+	private PointsRepository pointsReprositry;
 
 	@Autowired
-	private CartReprositry cartReprositry;
+	private CartRepository cartReprositry;
 	
 	@Autowired
 	private LeaveConfigRespostory  leaveConfigRespostory;

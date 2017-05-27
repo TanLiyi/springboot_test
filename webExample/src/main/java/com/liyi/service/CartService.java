@@ -19,18 +19,18 @@ import com.liyi.dto.UpdateCartRequestDto;
 import com.liyi.entity.Cart;
 import com.liyi.entity.CartSub;
 import com.liyi.entity.Goods;
-import com.liyi.repository.CartReprositry;
-import com.liyi.repository.CartSubRespostory;
+import com.liyi.repository.CartRepository;
+import com.liyi.repository.CartSubRepository;
 import com.liyi.repository.GoodRepository;
 
 @Service
 public class CartService {
 
 	@Autowired
-	private CartReprositry cartReprositry;
+	private CartRepository cartReprositry;
 	
 	@Autowired
-	private CartSubRespostory cartSubRespostory;
+	private CartSubRepository cartSubRespostory;
 	
 	@Autowired
 	private GoodRepository goodRepository;

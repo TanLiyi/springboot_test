@@ -23,13 +23,13 @@ import org.springframework.stereotype.Service;
 public class OrderService {
 	
 	@Autowired
-	private OrderRespostory orderRespostory;
+	private OrderRepository orderRespostory;
 	
 	@Autowired
-	private UserReprositry userRespostory;
+	private UserRepository userRespostory;
 	
 	@Autowired
-	private CartSubRespostory cartsubRespostory;
+	private CartSubRepository cartsubRespostory;
 	
 	@Autowired
 	private LeaveConfigRespostory configRespostory;
@@ -41,10 +41,10 @@ public class OrderService {
 	private UserAddressService addressService;
 
 	@Autowired
-	private OrderAddressReprositry orderAddressReprositry;
+	private OrderAddressRepository orderAddressReprositry;
 	
 	@Autowired
-	private OrderSubRespostory orderSubRespostory;
+	private OrderSubRepository orderSubRespostory;
 	
 	
 	public List<OrderDto> getOrderList(){

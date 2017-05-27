@@ -18,7 +18,7 @@ import com.liyi.dto.CommonCreateResponseDto;
 import com.liyi.dto.CommonResponseDto;
 import com.liyi.dto.EditCategoryRequestDto;
 import com.liyi.entity.Category;
-import com.liyi.repository.CategoryReprositry;
+import com.liyi.repository.CategoryRepository;
 import com.liyi.utils.CustomSpecications;
 import com.liyi.utils.OffsetRequest;
 import com.liyi.utils.PageableBean;
@@ -29,7 +29,7 @@ import com.liyi.utils.SearchFilter.Operator;
 public class CategoryService {
 
 	@Autowired
-	private CategoryReprositry  categoryReprositry;
+	private CategoryRepository  categoryReprositry;
 	
 	public List<Category> get(){
 		List<Category> list=categoryReprositry.findByDeleted(0);

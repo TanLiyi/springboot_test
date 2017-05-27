@@ -10,7 +10,7 @@ import com.liyi.entity.OrderDelivery;
 import com.liyi.exception.CommonCode;
 import com.liyi.exception.ServiceException;
 import com.liyi.repository.OrderDeliveryRepository;
-import com.liyi.repository.OrderRespostory;
+import com.liyi.repository.OrderRepository;
 
 @Service
 public class OrderDeliveryService {
@@ -19,7 +19,7 @@ public class OrderDeliveryService {
 	private OrderDeliveryRepository orderDeliveryRepository;
 	
 	@Autowired
-	private OrderRespostory orderRespostory;
+	private OrderRepository orderRespostory;
 	
 	@Transactional
 	public Integer create(Integer orderId,String delivererName,String deliveryCode){

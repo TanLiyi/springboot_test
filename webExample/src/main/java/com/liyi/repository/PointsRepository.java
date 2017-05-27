@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.liyi.entity.Points;
 
 
-public interface PointsReprositry extends CrudRepository<Points, Integer>{
+public interface PointsRepository extends CrudRepository<Points, Integer>{
 	
 	@Query("select p from Points p where p.userId=?1  order by createTime desc")
 	List<Points> findByUserId(Integer userId);

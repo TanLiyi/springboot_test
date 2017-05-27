@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.liyi.entity.Cart;
 
 
-public interface CartReprositry extends CrudRepository<Cart, Integer>{
+public interface CartRepository extends CrudRepository<Cart, Integer>{
 	
 	@Query("select c from Cart c where c.userId=?1 and deleted=0")
 	Cart findByUserId(Integer userId);

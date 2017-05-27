@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.liyi.entity.Address;
 
 
-public interface AddressReprositry extends CrudRepository<Address, Integer>{
+public interface AddressRepository extends CrudRepository<Address, Integer>{
 	
 	@Query("select a from Address a where a.userId=?1  and deleted=0 order by a.isDefault desc")
 	List<Address> findByUserId(Integer userId);

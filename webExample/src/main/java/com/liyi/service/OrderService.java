@@ -15,7 +15,7 @@ import com.liyi.entity.*;
 import com.liyi.exception.CommonCode;
 import com.liyi.exception.ServiceException;
 import com.liyi.repository.*;
-import com.liyi.utils.BeanMapper;
+import com.liyi.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +45,9 @@ public class OrderService {
 	
 	@Autowired
 	private OrderSubRepository orderSubRespostory;
+	
+	@Autowired
+	private CodeUtils codeUtils;
 	
 	
 	public List<OrderDto> getOrderList(){
@@ -137,7 +140,7 @@ public class OrderService {
 			order.setDeleted(0);
 			order.setUserId(userId);
 			order.setOrderStatus(0);
-			order.setOrderCode(LocalTime.now().toString());
+			order.setOrderCode(codeUtils.orderCode());
 			order.setRealPrice(realPay);
 			order.setTotalPrice(total);
 			order.setFavourable(config.getLeaveName()+"会员，共优惠"+new DecimalFormat("0.00").format(cut)+"元");
@@ -173,7 +176,7 @@ public class OrderService {
 					g.setTotalStockQty(g.getTotalStockQty()-sub.getQty());
 					g.setUpdateTime(new Date());
 					if(g.getTotalStockQty()<0){
-						throw new ServiceException(CommonCode.BAD_REQUEST,"库存不足");
+						throw new ServiceException(CommonCode.BAD_REQUEST,"该商品已经售罄");
 					}
 				}
 				goodReprositry.save(g);

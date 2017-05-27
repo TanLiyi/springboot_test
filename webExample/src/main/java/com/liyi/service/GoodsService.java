@@ -98,7 +98,7 @@ public class GoodsService {
 		return response;
 	}
 	
-	@Transactional
+	
 	public GoodDetailDto getDetail(Integer id){
 		GoodDetailDto response=new GoodDetailDto();
 		Goods good=goodRepository.findbyId(id);
@@ -117,9 +117,6 @@ public class GoodsService {
 			goodDto.setTotalStockQty(good.getTotalStockQty());
 			response.setMessage("已找到商品信息");
 			response.setDetail(goodDto);
-			//每调用一次 count+1
-			good.setCount(good.getCount()+1);
-			goodRepository.save(good);
 		}
 		return response;
 	}

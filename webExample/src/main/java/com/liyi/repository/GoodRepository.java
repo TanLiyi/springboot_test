@@ -15,9 +15,6 @@ public interface GoodRepository extends CrudRepository<Goods, Integer>,JpaSpecif
 	@Query("select g from Goods g where deleted=0 and id=?1")
 	Goods findbyId(Integer id);
 	
-//	@Query("select g from Goods g where categoryId=?1 and deleted=0")
-//	List<Goods> findAdminCategoryGoods(Integer categoryId);
-	
 	@Query("select g from Goods g where isOnShelf=1 and deleted=0 and name like ?1 order by createTime desc")
 	List<Goods> finByName(String name);
 	

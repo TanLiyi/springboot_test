@@ -20,6 +20,7 @@ import com.liyi.entity.Goods;
 import com.liyi.entity.User;
 import com.liyi.service.CategoryService;
 import com.liyi.service.GoodsService;
+import com.liyi.service.StatService;
 import com.liyi.service.UserService;
 
 
@@ -35,6 +36,9 @@ public class IndexController {
 	
 	@Autowired
 	private CategoryService categoryService;
+	
+	@Autowired
+	private StatService statService;
 	
 	@RequestMapping("/index")
 	public ModelAndView index(ModelMap model,IndexRequestDto request,HttpSession session) throws Exception {
@@ -117,14 +121,10 @@ public class IndexController {
 		model.put("categorys", categorys);
 		if(request.getParameter("id")!=null){
 			GoodDetailDto detail = goodsService.getDetail(Integer.valueOf(request.getParameter("id")));
+			statService.statGoodvisit(id);
 			model.put("detail", detail.getDetail());
 		}
 		return "/detail";
 	}
 	
-//	@RequestMapping("/cre")
-//	public String save() {
-//		return "user/login";    //重定向到页面
-//		return "redirect:user/create";  //重定向到指定的controller方法
-//	}
 }

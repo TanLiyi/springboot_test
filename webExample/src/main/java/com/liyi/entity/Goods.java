@@ -44,27 +44,25 @@ public class Goods implements Serializable {
 	private String desc;
 
 	@Column(name = "is_on_shelf")
-	private Byte isOnShelf=1;   //1-上架 0未上架
-	
-	@Column(name = "create_time")
-	private Date createTime;
-
-	private Byte deleted=0;
-
-	@Column(name = "article_number")   //待定
-    private String articleNumber;
+	private Byte isOnShelf=1;   //1-上架 0未上架 2-已售罄
 
 	@Column(name = "sale_price")   //售价
 	private Double salePrice;
 	
-	private Integer count=0; //浏览人数
-
 	@Column(name = "total_stock_qty")  //总库存
 	private Integer totalStockQty=0;
 
 	@Column(name = "total_sale_qty") //售出数量
 	private Integer totalSaleQty=0;
 
+	@Column(name = "visit_count")
+	private Integer count=0; //浏览人数
+	
+	private Byte deleted=0;
+
+	@Column(name = "create_time")
+	private Date createTime;
+	
 	@Column(name = "update_time")
 	private Date updateTime;
 	
@@ -152,14 +150,6 @@ public class Goods implements Serializable {
 
 	public void setPic(String pic) {
 		this.pic = pic;
-	}
-
-	public String getArticleNumber() {
-		return articleNumber;
-	}
-
-	public void setArticleNumber(String articleNumber) {
-		this.articleNumber = articleNumber;
 	}
 
 	public Double getSalePrice() {

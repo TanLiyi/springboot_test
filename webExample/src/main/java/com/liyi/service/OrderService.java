@@ -15,7 +15,9 @@ import com.liyi.entity.*;
 import com.liyi.exception.CommonCode;
 import com.liyi.exception.ServiceException;
 import com.liyi.repository.*;
-import com.liyi.utils.*;
+import com.liyi.utils.BeanMapper;
+import com.liyi.utils.CodeUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,10 +47,6 @@ public class OrderService {
 	
 	@Autowired
 	private OrderSubRepository orderSubRespostory;
-	
-	@Autowired
-	private CodeUtils codeUtils;
-	
 	
 	public List<OrderDto> getOrderList(){
 		List<Order> orders=orderRespostory.findAllOrder();
@@ -140,7 +138,7 @@ public class OrderService {
 			order.setDeleted(0);
 			order.setUserId(userId);
 			order.setOrderStatus(0);
-			order.setOrderCode(codeUtils.orderCode());
+			order.setOrderCode(CodeUtils.orderCode());
 			order.setRealPrice(realPay);
 			order.setTotalPrice(total);
 			order.setFavourable(config.getLeaveName()+"会员，共优惠"+new DecimalFormat("0.00").format(cut)+"元");

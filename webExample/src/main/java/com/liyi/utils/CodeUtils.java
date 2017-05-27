@@ -16,16 +16,13 @@ public class CodeUtils {
 		return buffer.toString();
 	}
 	
-	public String orderCode(){
+	public static String orderCode(){
 		Date date=new Date();
 		Long dateTime=date.getTime();
 		StringBuffer buffer=new StringBuffer();
 		int random=(int)(1+Math.random()*10);
+		buffer.append("O").append(dateTime).append(random);
 		
-		
-		buffer.append("O").append(random).append(dateTime);
-		
-		
-		return null;
+		return buffer.toString();
 	}
 }

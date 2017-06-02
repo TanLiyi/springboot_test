@@ -1,0 +1,766 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dashboard</title>
+    
+    <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
+    <meta name="author" content="">
+    
+    <meta name="msapplication-TileColor" content="#5bc0de">
+    <meta name="msapplication-TileImage" content="assets/img/metis-tile.png">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./Dashboard_files/bootstrap.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./Dashboard_files/font-awesome.css">
+    
+    <!-- Metis core stylesheet -->
+    <link rel="stylesheet" href="./Dashboard_files/main.css">
+    
+    <!-- metisMenu stylesheet -->
+    <link rel="stylesheet" href="./Dashboard_files/metisMenu.css">
+    
+    <!-- onoffcanvas stylesheet -->
+    <link rel="stylesheet" href="./Dashboard_files/onoffcanvas.css">
+    
+    <!-- animate.css stylesheet -->
+    <link rel="stylesheet" href="./Dashboard_files/animate.css">
+
+
+        <link rel="stylesheet" href="./Dashboard_files/fullcalendar.min.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <!--For Development Only. Not required -->
+    <script>
+        less = {
+            env: "development",
+            relativeUrls: false,
+            rootpath: "/assets/"
+        };
+    </script>
+    <link rel="stylesheet" href="./Dashboard_files/style-switcher.css">
+    <link rel="stylesheet/less" type="text/css" href="./Dashboard_files/theme.less">
+    <script src="./Dashboard_files/less.js.下载"></script>
+
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+
+        <body class="  " style="background-image: url(&quot;assets/img/pattern/arches.png&quot;); background-repeat: repeat; padding-top: 0px;">
+            <div class="bg-dark dk" id="wrap">
+                <div id="top">
+                    <!-- .navbar -->
+                    <nav class="navbar navbar-inverse navbar-static-top">
+                        <div class="container-fluid">
+                    
+                    
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <header class="navbar-header">
+                    
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/index.html" class="navbar-brand"><img src="./Dashboard_files/logo.png" alt=""></a>
+                    
+                            </header>
+                    
+                    
+                            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    
+                                <!-- .nav -->
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html">Dashboard</a></li>
+                                    <li><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/table.html">Tables</a></li>
+                                    <li class="dropdown ">
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
+                                            Form Elements <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-general.html">General</a></li>
+                                            <li><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-validation.html">Validation</a></li>
+                                            <li><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-wysiwyg.html">WYSIWYG</a></li>
+                                            <li><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-wizard.html">Wizard &amp; File Upload</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- /.nav -->
+                            </div>
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                    <!-- /.navbar -->
+                        <header class="head">
+                                <div class="search-bar">
+                                    <form class="main-search" action="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Live Search ...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary btn-sm text-muted" type="button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                    <!-- /.main-search -->                                </div>
+                                <!-- /.search-bar -->
+                            <div class="main-bar">
+                                <h3>
+              <i class="fa fa-dashboard"></i>&nbsp;
+            Dashboard
+          </h3>
+                            </div>
+                            <!-- /.main-bar -->
+                        </header>
+                        <!-- /.head -->
+                </div>
+                <!-- /#top -->
+                    <div id="left">
+                        <div class="media user-media bg-dark dker">
+                            <div class="user-media-toggleHover">
+                                <span class="fa fa-user"></span>
+                            </div>
+                            <div class="user-wrapper bg-dark">
+                                <a class="user-link" href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html">
+                                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="./Dashboard_files/user.gif">
+                                    <span class="label label-danger user-label">16</span>
+                                </a>
+                        
+                                <div class="media-body">
+                                    <h5 class="media-heading">Archie</h5>
+                                    <ul class="list-unstyled user-info">
+                                        <li><a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html">Administrator</a></li>
+                                        <li>Last Access : <br>
+                                            <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #menu -->
+                        <ul id="menu" class="bg-blue dker">
+                                  <li class="nav-header">Menu</li>
+                                  <li class="nav-divider"></li>
+                                  <li class="">
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html">
+                                      <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
+                                    </a>
+                                  </li>
+                                  <li class="">
+                                    <a href="javascript:;">
+                                      <i class="fa fa-building "></i>
+                                      <span class="link-title">Layouts</span>
+                                      <span class="fa arrow"></span>
+                                    </a>
+                                    <ul class="collapse" aria-expanded="false">
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/boxed.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-header-boxed.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout &amp; Fixed Header </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-header-fixed-mini-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Fixed Header and Fixed Mini Menu </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-header-menu.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Fixed Header &amp; Menu </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-header-mini-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Fixed Header &amp; Mini Menu </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-header.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Fixed Header </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-menu-boxed.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout &amp; Fixed Menu </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-menu.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Fixed Menu </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fixed-mini-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Fixed &amp; Mini Menu </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/fxhmoxed.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Boxed and Fixed Header &amp; Nav </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-header-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Header &amp; Sidebars </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-header.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Header </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-left-right-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Left &amp; Right Sidebar </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-left-sidebar-main-search.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Left Sidebar &amp; Main Search </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-left-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Left Sidebar </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-main-search.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Main Search </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/no-right-sidebar.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; No Right Sidebar </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/sm.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Mini Sidebar </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="">
+                                    <a href="javascript:;">
+                                      <i class="fa fa-tasks"></i>
+                                      <span class="link-title">Components</span>
+                                      <span class="fa arrow"></span>
+                                    </a>
+                                    <ul class="collapse" aria-expanded="false">
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/bgcolor.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Bg Color </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/bgimage.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Bg Image </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/button.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Buttons </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/icon.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Icon </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/pricing.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Pricing Table </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/progress.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Progress </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="">
+                                    <a href="javascript:;">
+                                      <i class="fa fa-pencil"></i>
+                                      <span class="link-title">
+                                    Forms
+                        	  </span>
+                                      <span class="fa arrow"></span>
+                                    </a>
+                                    <ul class="collapse" aria-expanded="false">
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-general.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form General </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-validation.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form Validation </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-wizard.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form Wizard </a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/form-wysiwyg.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form WYSIWYG </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/table.html">
+                                      <i class="fa fa-table"></i>
+                                      <span class="link-title">Tables</span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/typography.html">
+                                      <i class="fa fa-font"></i>
+                                      <span class="link-title">
+                                    Typography
+                                  </span>  </a>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/maps.html">
+                                      <i class="fa fa-map-marker"></i><span class="link-title">
+                                    Maps
+                                  </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/chart.html">
+                                      <i class="fa fa fa-bar-chart-o"></i>
+                                      <span class="link-title">
+                                    Charts
+                                  </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/calendar.html">
+                                      <i class="fa fa-calendar"></i>
+                                      <span class="link-title">
+                                    Calendar
+                                  </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="javascript:;">
+                                      <i class="fa fa-exclamation-triangle"></i>
+                                      <span class="link-title">
+                                      Error Pages
+                                    </span>
+                                      <span class="fa arrow"></span>
+                                    </a>
+                                    <ul class="collapse" aria-expanded="false">
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/403.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;403</a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/404.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;404</a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/405.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;405</a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/500.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;500</a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/503.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;503</a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/offline.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;offline</a>
+                                      </li>
+                                      <li>
+                                        <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/countdown.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp;Under Construction</a>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/grid.html">
+                                      <i class="fa fa-columns"></i>
+                                      <span class="link-title">
+                            Grid
+                            </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/blank.html">
+                                      <i class="fa fa-square-o"></i>
+                                      <span class="link-title">
+                            Blank Page
+                            </span>
+                                    </a>
+                                  </li>
+                                  <li class="nav-divider"></li>
+                                  <li>
+                                    <a href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/login.html">
+                                      <i class="fa fa-sign-in"></i>
+                                      <span class="link-title">
+                            Login Page
+                            </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="javascript:;">
+                                      <i class="fa fa-code"></i>
+                                      <span class="link-title">
+                            	Unlimited Level Menu
+                            	</span>
+                                      <span class="fa arrow"></span>
+                                    </a>
+                                    <ul class="collapse" aria-expanded="false">
+                                      <li>
+                                        <a href="javascript:;">Level 1  <span class="fa arrow"></span>  </a>
+                                        <ul class="collapse" aria-expanded="false">
+                                          <li> <a href="javascript:;">Level 2</a>  </li>
+                                          <li> <a href="javascript:;">Level 2</a>  </li>
+                                          <li>
+                                            <a href="javascript:;">Level 2  <span class="fa arrow"></span>  </a>
+                                            <ul class="collapse" aria-expanded="false">
+                                              <li> <a href="javascript:;">Level 3</a>  </li>
+                                              <li> <a href="javascript:;">Level 3</a>  </li>
+                                              <li>
+                                                <a href="javascript:;">Level 3  <span class="fa arrow"></span>  </a>
+                                                <ul class="collapse" aria-expanded="false">
+                                                  <li> <a href="javascript:;">Level 4</a>  </li>
+                                                  <li> <a href="javascript:;">Level 4</a>  </li>
+                                                  <li>
+                                                    <a href="javascript:;">Level 4  <span class="fa arrow"></span>  </a>
+                                                    <ul class="collapse" aria-expanded="false">
+                                                      <li> <a href="javascript:;">Level 5</a>  </li>
+                                                      <li> <a href="javascript:;">Level 5</a>  </li>
+                                                      <li> <a href="javascript:;">Level 5</a>  </li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </li>
+                                              <li> <a href="javascript:;">Level 4</a>  </li>
+                                            </ul>
+                                          </li>
+                                          <li> <a href="javascript:;">Level 2</a>  </li>
+                                        </ul>
+                                      </li>
+                                      <li> <a href="javascript:;">Level 1</a>  </li>
+                                      <li>
+                                        <a href="javascript:;">Level 1  <span class="fa arrow"></span>  </a>
+                                        <ul class="collapse" aria-expanded="false">
+                                          <li> <a href="javascript:;">Level 2</a>  </li>
+                                          <li> <a href="javascript:;">Level 2</a>  </li>
+                                          <li> <a href="javascript:;">Level 2</a>  </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                        <!-- /#menu -->
+                    </div>
+                    <!-- /#left -->
+                <div id="content">
+                    <div class="outer">
+                        <div class="inner bg-light lter">
+                            
+<hr><div class="text-center">
+    <ul class="stats_box">
+	<li>
+	    
+	    <div class="stat_text">
+		<strong>2.345</strong>Weekly Visit
+		<span class="percent down"> <i class="fa fa-caret-down"></i> -16%</span>
+	    </div>
+	</li>
+	<li>
+	    
+	    <div class="stat_text">
+		<strong>165</strong>Daily Visit
+		<span class="percent up"> <i class="fa fa-caret-up"></i> +23%</span>
+	    </div>
+	</li>
+	<li>
+	    
+	    <div class="stat_text">
+		<strong>$2 345.00</strong>Weekly Sale
+		<span class="percent"> 0%</span>
+	    </div>
+	</li>
+	<li>
+	    
+	    <div class="stat_text">
+		<strong>$678.00</strong>Monthly Sale
+		<span class="percent down"> <i class="fa fa-caret-down"></i> -10%</span>
+	    </div>
+	</li>
+    </ul>
+</div>
+<div class="text-center">
+
+    <a class="quick-btn" href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html#">
+	<i class="fa fa-bolt fa-2x"></i>
+	<span>待付款</span>
+	<span class="label label-default">2</span>
+    </a>
+    <a class="quick-btn" href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html#">
+	<i class="fa fa-check fa-2x"></i>
+	<span>代发货</span>
+	<span class="label label-danger">2</span>
+    </a>
+    <a class="quick-btn" href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html#">
+	<i class="fa fa-envelope fa-2x"></i>
+	<span>已完成</span>
+	<span class="label label-success">-456</span>
+    </a>
+    
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-8">
+	<div class="box">
+	<center>
+	    <header>
+		<h5>热销商品Top10</h5>
+	    </header>
+		</center>
+		<table class="table table-condensed table-hovered sortableTable tablesorter tablesorter-default" role="grid">
+		    <thead>
+			<tr role="row" class="tablesorter-headerRow">
+			    <th data-column="0" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Country : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">商品号 <i class="fa sort"></i></div></th>
+			    <th data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Visit : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">商品信息 <i class="fa sort"></i></div></th>
+			    <th data-column="2" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Time : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">售出数量 <i class="fa sort"></i></div></th>
+			</tr>
+		    </thead>
+		    <tbody aria-live="polite" aria-relevant="all">
+			<tr class="active" role="row">
+			    <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+			<tr role="row">
+			    <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+			<tr class="danger" role="row">
+			   <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+			<tr class="warning" role="row">
+			    <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+			<tr role="row">
+			    <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+			<tr role="row">
+			   <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+			<tr class="success" role="row">
+			   <td>P12233</td>
+			    <td>图片+名字</td>
+			    <td>1</td>
+			</tr>
+		    </tbody>
+		</table>
+		</div>
+		
+		</div>
+    <div class="col-lg-4">
+	<div class="box">
+	    <div class="body">
+		 <header>
+		<h5>库存提醒</h5>
+	    </header>
+		<table class="table table-condensed table-hovered sortableTable tablesorter tablesorter-default" role="grid">
+		    <thead>
+			<tr role="row" class="tablesorter-headerRow">
+			    <th data-column="0" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Country : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">Country <i class="fa sort"></i></div></th>
+			    <th data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Visit : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">浏览人数 <i class="fa sort"></i></div></th>
+			    <th data-column="2" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Time : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">Time <i class="fa sort"></i></div></th>
+			</tr>
+		    </thead>
+		    <tbody aria-live="polite" aria-relevant="all">
+			<tr class="active" role="row">
+			    <td>Andorra</td>
+			    <td>1126</td>
+			    <td>00:00:15</td>
+			</tr>
+			<tr role="row">
+			    <td>Belarus</td>
+			    <td>350</td>
+			    <td>00:01:20</td>
+			</tr>
+			<tr class="danger" role="row">
+			    <td>Paraguay</td>
+			    <td>43</td>
+			    <td>00:00:30</td>
+			</tr>
+			<tr class="warning" role="row">
+			    <td>Malta</td>
+			    <td>547</td>
+			    <td>00:10:20</td>
+			</tr>
+			<tr role="row">
+			    <td>Australia</td>
+			    <td>560</td>
+			    <td>00:00:10</td>
+			</tr>
+			<tr role="row">
+			    <td>Kenya</td>
+			    <td>97</td>
+			    <td>00:20:00</td>
+			</tr>
+			<tr class="success" role="row">
+			    <td>Italy</td>
+			    <td>2450</td>
+			    <td>00:10:00</td>
+			</tr>
+		    </tbody>
+		</table>
+	    </div>
+	</div>
+    </div>
+</div><div class="text-center">
+    
+</div>
+<hr>
+
+
+                        </div>
+                        <!-- /.inner -->
+                    </div>
+                    <!-- /.outer -->
+                </div>
+                <!-- /#content -->
+
+                    <div id="right" class="onoffcanvas is-right is-fixed bg-light" aria-expanded="false">
+                        <a class="onoffcanvas-toggler" href="http://demo.cssmoban.com/cssthemes4/dstp_3_adminmaster/public/dashboard.html#right" data-toggle="onoffcanvas" aria-expanded="false"></a>
+                        <br>
+                        <br>
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                        </div>
+                        <!-- .well well-small -->
+                        <div class="well well-small dark">
+                            <ul class="list-unstyled">
+                                <li>Visitor <span class="inlinesparkline pull-right"><canvas width="3" height="19" style="display: inline-block; width: 3px; height: 19px; vertical-align: top;"></canvas></span></li>
+                                <li>Online Visitor <span class="dynamicsparkline pull-right"><canvas width="21" height="19" style="display: inline-block; width: 21px; height: 19px; vertical-align: top;"></canvas></span></li>
+                                <li>Popularity <span class="dynamicbar pull-right"><canvas width="34" height="19" style="display: inline-block; width: 34px; height: 19px; vertical-align: top;"></canvas></span></li>
+                                <li>New Users <span class="inlinebar pull-right"><canvas width="4" height="19" style="display: inline-block; width: 4px; height: 19px; vertical-align: top;"></canvas></span></li>
+                            </ul>
+                        </div>
+                        <!-- /.well well-small -->
+                        <!-- .well well-small -->
+                        <div class="well well-small dark">
+                            <button class="btn btn-block">Default</button>
+                            <button class="btn btn-primary btn-block">Primary</button>
+                            <button class="btn btn-info btn-block">Info</button>
+                            <button class="btn btn-success btn-block">Success</button>
+                            <button class="btn btn-danger btn-block">Danger</button>
+                            <button class="btn btn-warning btn-block">Warning</button>
+                            <button class="btn btn-inverse btn-block">Inverse</button>
+                            <button class="btn btn-metis-1 btn-block">btn-metis-1</button>
+                            <button class="btn btn-metis-2 btn-block">btn-metis-2</button>
+                            <button class="btn btn-metis-3 btn-block">btn-metis-3</button>
+                            <button class="btn btn-metis-4 btn-block">btn-metis-4</button>
+                            <button class="btn btn-metis-5 btn-block">btn-metis-5</button>
+                            <button class="btn btn-metis-6 btn-block">btn-metis-6</button>
+                        </div>
+                        <!-- /.well well-small -->
+                        <!-- .well well-small -->
+                        <div class="well well-small dark">
+                            <span>Default</span><span class="pull-right"><small>20%</small></span>
+                        
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                            </div>
+                            <span>Success</span><span class="pull-right"><small>40%</small></span>
+                        
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                            </div>
+                            <span>warning</span><span class="pull-right"><small>60%</small></span>
+                        
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                            </div>
+                            <span>Danger</span><span class="pull-right"><small>80%</small></span>
+                        
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /#right -->
+            </div>
+            <!-- /#wrap -->
+            <footer class="Footer bg-dark dker">
+                <p>2017 © Metis Bootstrap Admin Template v2.4.2.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+            </footer>
+            <!-- /#footer -->
+            <!-- #helpModal -->
+            <div id="helpModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- /#helpModal -->
+            <!--jQuery -->
+            <script src="./Dashboard_files/jquery.js.下载"></script>
+
+                    <script src="./Dashboard_files/moment.min.js.下载"></script>
+                    <script src="./Dashboard_files/jquery-ui.min.js.下载"></script>
+                    <script src="./Dashboard_files/fullcalendar.min.js.下载"></script>
+                    <script src="./Dashboard_files/jquery.tablesorter.min.js.下载"></script>
+                    <script src="./Dashboard_files/jquery.sparkline.min.js.下载"></script>
+                    <script src="./Dashboard_files/jquery.flot.min.js.下载"></script>
+                    <script src="./Dashboard_files/jquery.flot.selection.min.js.下载"></script>
+                    <script src="./Dashboard_files/jquery.flot.resize.min.js.下载"></script>
+
+            <!--Bootstrap -->
+            <script src="./Dashboard_files/bootstrap.js.下载"></script>
+            <!-- MetisMenu -->
+            <script src="./Dashboard_files/metisMenu.js.下载"></script>
+            <!-- onoffcanvas -->
+            <script src="./Dashboard_files/onoffcanvas.js.下载"></script>
+            <!-- Screenfull -->
+            <script src="./Dashboard_files/screenfull.js.下载"></script>
+
+
+            <!-- Metis core scripts -->
+            <script src="./Dashboard_files/core.js.下载"></script>
+            <!-- Metis demo scripts -->
+            <script src="./Dashboard_files/app.js.下载"></script>
+
+                <script>
+                    $(function() {
+                      Metis.dashboard();
+                    });
+                </script>
+
+            <script src="./Dashboard_files/style-switcher.js.下载"></script>
+
+</body></html>
